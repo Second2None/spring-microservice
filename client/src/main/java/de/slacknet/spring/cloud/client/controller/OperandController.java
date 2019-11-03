@@ -1,4 +1,4 @@
-package de.slacknet.spring.springcloud.client.controller;
+package de.slacknet.spring.cloud.client.controller;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;

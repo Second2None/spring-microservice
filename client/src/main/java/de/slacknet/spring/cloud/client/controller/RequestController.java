@@ -1,4 +1,4 @@
-package de.slacknet.spring.springcloud.client.controller;
+package de.slacknet.spring.cloud.client.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
