@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: eureka-standalone
+  cloud:
+    config:
+      fail-fast: true
+      uri: http://eureka-standalone:8001

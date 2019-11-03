@@ -1,0 +1,39 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-primary:8010/eureka/,http://eureka-secondary:8011/eureka/,http://eureka-tertiary:8012/eureka/
+server:
+  port: 8080
+spring:
+  application:
+    name: ms-api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: operation
+        predicates:
+          - Path=/operation-service
+        filters:
+         - RewritePath=/operation-service, /operation
+        uri: lb://eureka-client-root
+      - id: operator
+        predicates:
+          - Path=/operator-service
+        filters:
+         - RewritePath=/operator-service, /
+        uri: lb://eureka-client-operator
+      - id: operand
+        predicates:
+          - Path=/operand-service
+        filters:
+         - RewritePath=/operand-service, /
+        uri: lb://eureka-client-operand
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

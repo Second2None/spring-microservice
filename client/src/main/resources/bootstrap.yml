@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: eureka-client-root
+  cloud:
+    config:
+      fail-fast: true
+      uri: http://eureka-client-instance:8001

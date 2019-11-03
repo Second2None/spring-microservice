@@ -1,0 +1,17 @@
+server:
+  port: 8001
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Second2None/spring-microservice-config.git
+          searchPaths: configuration-discovery
+          basedir: D:/Workspaces/github/temp
+        native:
+          # "native" is used when the native profile is active, for local tests with a classpath repo:
+          # searchLocations: classpath:offline-repository/
+          searchLocations: file:///D:/Workspaces/github/spring-microservice-config/configuration-discovery
+  profiles:
+    # add profile 'git' to load configuration from github repo
+    active: native
