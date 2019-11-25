@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author SzudraB
  */
 @Controller
-@Profile("!operator")
+@Profile("operand")
 public class OperandController {
     
 	@GetMapping("/")
